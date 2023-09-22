@@ -2,29 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveArm : MonoBehaviour
+public class CoinCol : MonoBehaviour
 {
 
-    Rigidbody2D myBody;
-
-    float armPower = 10f;
-
-
+    public int coinVal = 0;
     // Start is called before the first frame update
     void Start()
     {
-        myBody = GetComponent<Rigidbody2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            myBody.AddForce(transform.up * armPower, ForceMode2D.Impulse);
-        }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       if(collision.gameObject.name == "coin")
+        {
+            coinVal += 1;
+            Destroy(collision.gameObject);
+        }
     }
 }
