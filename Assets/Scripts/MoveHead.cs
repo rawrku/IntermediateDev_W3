@@ -21,7 +21,7 @@ public class MoveHead : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             mouth.useMotor = true;
             JointMotor2D newMotor = mouth.motor;
@@ -29,7 +29,11 @@ public class MoveHead : MonoBehaviour
 
             mouth.motor = newMotor;
 
+        } else if (Input.GetKeyUp(KeyCode.D))
+        {
+            mouth.useMotor = false;
         }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             mouth.useMotor = true;
@@ -37,6 +41,9 @@ public class MoveHead : MonoBehaviour
             newMotor.motorSpeed = speed;
 
             mouth.motor = newMotor;
+        } else if (Input.GetKeyUp(KeyCode.A))
+        {
+            mouth.useMotor = false;
         }
     }
 }
