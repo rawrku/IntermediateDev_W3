@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinCol : MonoBehaviour
+public class ObjectCollison : MonoBehaviour
 {
 
     public int coinVal = 0;
@@ -20,9 +20,15 @@ public class CoinCol : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       if(collision.gameObject.name == "coin")
+       if(collision.gameObject.tag == "coin")
         {
             coinVal += 1;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "trash")
+        {
+            coinVal -= 1;
             Destroy(collision.gameObject);
         }
     }
