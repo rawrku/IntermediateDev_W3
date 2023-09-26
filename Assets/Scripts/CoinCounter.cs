@@ -6,23 +6,21 @@ using TMPro;
 public class CoinCounter : MonoBehaviour
 {
 
-    public static CoinCounter instance;
-
     public TMP_Text coinText;
 
-    public GameObject head;
-    private ObjectCollison coinScript;
+    public ObjectCollison coinScript;
     // Start is called before the first frame update
     void Start()
     {
-        coinScript = head.GetComponent<ObjectCollison>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        coinText.text = coinScript.coinVal.ToString();
 
-        
+
     }
 }

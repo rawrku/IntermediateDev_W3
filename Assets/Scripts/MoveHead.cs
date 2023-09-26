@@ -4,33 +4,39 @@ using UnityEngine;
 
 public class MoveHead : MonoBehaviour
 {
-    public float power = 3;
-    Rigidbody2D jaw;
+    public float speed = 3;
 
-    Vector3 diagonalLeft = new Vector3(1, 1, 0);
-    Vector3 diagonalRight = new Vector3(-1, 1, 0);
-
+    private HingeJoint2D mouth;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        jaw = GetComponent<Rigidbody2D>();
+
+        mouth = GetComponent<HingeJoint2D>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPos = transform.position;
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            jaw.AddForce(diagonalLeft * power, ForceMode2D.Impulse);
+            mouth.useMotor = true;
+            JointMotor2D newMotor = mouth.motor;
+            newMotor.motorSpeed = -speed;
+
+            mouth.motor = newMotor;
+
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            jaw.AddForce(diagonalRight * power, ForceMode2D.Impulse);
+            mouth.useMotor = true;
+            JointMotor2D newMotor = mouth.motor;
+            newMotor.motorSpeed = speed;
+
+            mouth.motor = newMotor;
         }
     }
 }
