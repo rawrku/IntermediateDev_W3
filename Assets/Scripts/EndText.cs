@@ -21,12 +21,12 @@ public class EndText : MonoBehaviour
         
         if (CoinScript.coinVal >= 1)
         {
-            endText.text = "You Win!\nYou ate: " + CoinScript.coinVal.ToString() + " coins!";
+            endText.text = "You Win!\nYou ate: " + CoinScript.coinVal.ToString() + " apples!";
         }
 
         if (CoinScript.coinVal <= 0)
         {
-            endText.text = "You Loose!\nYou failed to eat enough coins...";
+            endText.text = "You Loose!\nYou failed to eat enough apples...";
         }
 
     }

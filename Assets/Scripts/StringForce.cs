@@ -23,7 +23,6 @@ public class StringForce : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700));
             timer = Random.Range(minTime, maxTime);
-            Debug.Log("FORCE");
 
         } else
         {
