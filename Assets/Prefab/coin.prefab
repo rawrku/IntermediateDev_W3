@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8620454665298598415}
   - component: {fileID: 8620454665298598403}
   - component: {fileID: 643166650}
+  - component: {fileID: 8620454665729780672}
   m_Layer: 0
   m_Name: coin
   m_TagString: coin
@@ -151,6 +152,18 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -0.4298634, y: -0.19}
   m_AutoConfigureDistance: 0
-  m_Distance: 4
+  m_Distance: 5
   m_DampingRatio: 0
   m_Frequency: 1
+--- !u!114 &8620454665729780672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8620454665298598414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e8697869aeb6141a3044a1d381d0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
