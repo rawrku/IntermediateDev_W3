@@ -21,7 +21,6 @@ public class EndLoader : MonoBehaviour
     {
         if (collider.tag == "LevelExit")
         {
-            Debug.Log("END");
             SceneManager.LoadScene("End Scene");
         }
     }
