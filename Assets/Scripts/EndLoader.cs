@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EndLoader : MonoBehaviour
 {
-    public GameObject head;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +21,7 @@ public class EndLoader : MonoBehaviour
     {
         if (collider.tag == "LevelExit")
         {
+            Debug.Log("END");
             SceneManager.LoadScene("End Scene");
         }
     }

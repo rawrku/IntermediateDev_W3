@@ -9,7 +9,18 @@ public class ObjectCollison : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // if there is already an extisitng object of this type in the scene
+        if (FindObjectsOfType<ObjectCollison>().Length > 1)
+        {
+            // then destory this current one so there is not 2
+            Destroy(gameObject);
+        }
+        else
+        {
+            // otherwise if there is NOT, then carry it onto the next scene
+            DontDestroyOnLoad(gameObject);
+        }
+
     }
 
     // Update is called once per frame
